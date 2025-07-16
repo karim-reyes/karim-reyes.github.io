@@ -1,6 +1,6 @@
 # Please start here
 
-Welcome, and thanks for choosing our product. This is a new test
+## Welcome, and thanks for choosing our product. This is a new test
 
 If you want to dive right in, try our [quick start tutorial](./). 
 
