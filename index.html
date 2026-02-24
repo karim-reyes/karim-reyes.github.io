@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Karim Reyes | Developer Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+            --accent: #2563eb;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title {
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        main {
+            padding: 50px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 25px;
+            transition: all 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .card p {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 12px;
+            text-decoration: none;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .small-btn {
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: white;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 12px;
+            opacity: 0.5;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div>
+        <div class="title">🚀 Developer Command Center</div>
+        <div class="subtitle">Karim Reyes Díaz | Data Engineer & SAP BI</div>
+    </div>
+    <button class="small-btn" onclick="toggleCompact()">Modo Compacto</button>
+</header>
+
+<main>
+    <div class="grid" id="projectGrid">
+
+        <div class="card">
+            <h3>🐳 DataOps Pipeline</h3>
+            <p>ETL con Python + Docker + Jenkins</p>
+            <a href="http://localhost:8080" target="_blank">Abrir Jenkins</a>
+        </div>
+
+        <div class="card">
+            <h3>📊 SAP Datasphere</h3>
+            <p>Modelado analítico y vistas CDS</p>
+            <a href="#">Ir al Proyecto</a>
+        </div>
+
+        <div class="card">
+            <h3>💻 Portafolio Web</h3>
+            <p>HTML, CSS, JavaScript</p>
+            <a href="#">Ver Proyecto</a>
+        </div>
+
+        <div class="card">
+            <h3>📁 GitHub</h3>
+            <p>Repositorios y control de versiones</p>
+            <a href="https://github.com" target="_blank">Abrir GitHub</a>
+        </div>
+
+        <div class="card">
+            <h3>🐳 DataOps Pipeline</h3>
+            <p>ETL con Python + Docker + Jenkins</p>
+            <a href="http://localhost:8080" target="_blank">Abrir Jenkins</a>
+        </div>
+
+        <div class="card">
+            <h3>📊 SAP Datasphere</h3>
+            <p>Modelado analítico y vistas CDS</p>
+            <a href="#">Ir al Proyecto</a>
+        </div>
+
+        <div class="card">
+            <h3>💻 Portafolio Web</h3>
+            <p>HTML, CSS, JavaScript</p>
+            <a href="#">Ver Proyecto</a>
+        </div>
+
+        <div class="card">
+            <h3>📁 GitHub</h3>
+            <p>Repositorios y control de versiones</p>
+            <a href="https://github.com" target="_blank">Abrir GitHub</a>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    © 2026 Karim Reyes | Confío en mí 💪
+</footer>
+
+<script>
+    // Guardar preferencia de modo compacto
+    const grid = document.getElementById("projectGrid");
+
+    function toggleCompact() {
+        grid.classList.toggle("compact");
+
+        if (grid.classList.contains("compact")) {
+            localStorage.setItem("compactMode", "on");
+            grid.style.gap = "15px";
+        } else {
+            localStorage.setItem("compactMode", "off");
+            grid.style.gap = "30px";
+        }
+    }
+
+    // Recuperar preferencia al cargar
+    window.onload = function() {
+        if (localStorage.getItem("compactMode") === "on") {
+            grid.classList.add("compact");
+            grid.style.gap = "15px";
+        }
+    };
+</script>
+
+</body>
+</html>
